@@ -7,7 +7,6 @@ const PathCapsules = "/capsules"
 // CapsulesAPI defines functions to work with SpaceX Capsules V4 API.
 // Docs: https://github.com/r-spacex/SpaceX-API/tree/master/docs/capsules/v4
 type CapsulesAPI interface {
-	
 	GetCapsulesAll() ([]Capsule, error)
 	
 	GetCapsuleByID(id string) (Capsule, error)

@@ -7,7 +7,7 @@ import (
 )
 
 // CapsulesAPI is a client for the SpaceX Capsules V4 API.
-// Implements v4.CapsulesAPI interface
+// Implements v4.CapsulesAPI interface.
 type CapsulesAPI struct {
 	baseURL string
 	r       requester.Requester
@@ -20,13 +20,11 @@ func NewCapsulesAPI(baseURL string) CapsulesAPI {
 	}
 }
 
-func (c CapsulesAPI) GetCapsulesAll() ([]v4.Capsule, error) {
-	var capsules []v4.Capsule
+func (c CapsulesAPI) GetCapsulesAll() (capsules []v4.Capsule, err error) {
 	return capsules, c.r.Get(requester.Config{URL: c.baseURL}, &capsules)
 }
 
-func (c CapsulesAPI) GetCapsuleByID(id string) (v4.Capsule, error) {
-	var capsule v4.Capsule
+func (c CapsulesAPI) GetCapsuleByID(id string) (capsule v4.Capsule, err error) {
 	url := fmt.Sprintf("%s/%s", c.baseURL, id)
 	return capsule, c.r.Get(requester.Config{URL: url}, &capsule)
 }
