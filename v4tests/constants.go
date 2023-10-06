@@ -1,5 +1,8 @@
 package v4tests
 
+const spacexLiveAPIBase = "https://api.spacexdata.com/v4"
+
+// Capsules dummy data
 const (
 	capsulesAll = `[
 		{
@@ -37,7 +40,10 @@ const (
 		"type":"Dragon 1.0",
 		"id":"5e9e2c5bf35918ed873b2664"
 	}`
+)
 
+// Core dummy data
+const (
 	coresAll = `[
 		{
 			"block":null,
@@ -79,5 +85,39 @@ const (
 		"serial":"Merlin1A",
 		"status":"lost",
 		"id":"5e9e289df35918033d3b2623"
+	}`
+)
+
+// Crew dummy data
+const (
+	crewAll = `[
+		{
+			"name":"Robert Behnken",
+			"agency":"NASA",
+			"image":"https://imgur.com/0smMgMH.png",
+			"wikipedia":"https://en.wikipedia.org/wiki/Robert_L._Behnken",
+			"launches":["5eb87d46ffd86e000604b388"],
+			"status":"active",
+			"id":"5ebf1a6e23a9a60006e03a7a"
+		},
+		{
+			"name":"Douglas Hurley",
+			"agency":"NASA",
+			"image":"https://i.imgur.com/ooaayWf.png",
+			"wikipedia":"https://en.wikipedia.org/wiki/Douglas_G._Hurley",
+			"launches":["5eb87d46ffd86e000604b388"],
+			"status":"active",
+			"id":"5ebf1b7323a9a60006e03a7b"
+		}
+	]`
+
+	crewOne = `{
+		"name":"Robert Behnken",
+		"agency":"NASA",
+		"image":"https://imgur.com/0smMgMH.png",
+		"wikipedia":"https://en.wikipedia.org/wiki/Robert_L._Behnken",
+		"launches":["5eb87d46ffd86e000604b388"],
+		"status":"active",
+		"id":"5ebf1a6e23a9a60006e03a7a"
 	}`
 )

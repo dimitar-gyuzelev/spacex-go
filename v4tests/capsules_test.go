@@ -61,16 +61,5 @@ func TestGetCapsuleByID(t *testing.T) {
 
 func TestPostCapsulesQuery(t *testing.T) {
 	// TODO: implement
-	t.Skip("❗️ PostCapsulesQuery not implemented")
-
-	server := httptest.NewServer(http.HandlerFunc(handler("")))
-	defer server.Close()
-
-	client := v4clients.NewCapsulesAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
-
-	_, err := client.PostCapsulesQuery(v4.Query{})
-	if err != nil {
-		t.Error("❌ TestPostCapsulesQuery:", err)
-		return
-	}
+	t.Skip("PostCapsulesQuery not implemented")
 }

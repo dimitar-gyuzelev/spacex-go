@@ -62,16 +62,6 @@ func TestGetCoreByID(t *testing.T) {
 }
 
 func TestPostCoresQuery(t *testing.T) {
+	// TODO: implement
 	t.Skip("PostCoresQuery is not implemented")
-
-	server := httptest.NewServer(http.HandlerFunc(handler("")))
-	defer server.Close()
-
-	client := v4clients.NewCoresAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
-
-	_, err := client.PostCoresQuery(v4.Query{})
-	if err != nil {
-		t.Error("❌ TestPostCoresQuery:", err)
-		return
-	}
 }
