@@ -1,7 +1,6 @@
 package v4tests
 
 import (
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
@@ -11,8 +10,8 @@ import (
 	"github.com/dimitar-gyuzelev/spacex-go/v4clients"
 )
 
-func TestCapuselsReal(t *testing.T) {
-	t.Skip("testing against the real SpaceXAPI")
+func TestCapsulesReal(t *testing.T) {
+	t.Skip("testing against the real SpaceX API")
 	const base = "https://api.spacexdata.com/v4"
 	capsules := v4clients.NewCapsulesAPI(base)
 
@@ -21,7 +20,7 @@ func TestCapuselsReal(t *testing.T) {
 }
 
 func TestGetCapsulesAll(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(fakeGetCapsules))
+	server := httptest.NewServer(http.HandlerFunc(handler(capsulesAll)))
 	defer server.Close()
 
 	client := v4clients.NewCapsulesAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
@@ -39,7 +38,7 @@ func TestGetCapsulesAll(t *testing.T) {
 }
 
 func TestGetCapsuleByID(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(fakeGetCapsuleByID))
+	server := httptest.NewServer(http.HandlerFunc(handler(capsulesOne)))
 	defer server.Close()
 
 	client := v4clients.NewCapsulesAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
@@ -64,7 +63,7 @@ func TestPostCapsulesQuery(t *testing.T) {
 	// TODO: implement
 	t.Skip("❗️ PostCapsulesQuery not implemented")
 
-	server := httptest.NewServer(http.HandlerFunc(fakePostCapsulesQuery))
+	server := httptest.NewServer(http.HandlerFunc(handler("")))
 	defer server.Close()
 
 	client := v4clients.NewCapsulesAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
@@ -74,75 +73,4 @@ func TestPostCapsulesQuery(t *testing.T) {
 		t.Error("❌ TestPostCapsulesQuery:", err)
 		return
 	}
-}
-
-func fakeGetCapsules(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		w.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	data := []v4.Capsule{
-		{
-			ReuseCount:    0,
-			WaterLandings: 1,
-			LandLandings:  0,
-			LastUpdate:    "Hanging in atrium at SpaceX HQ in Hawthorne ",
-			Launches:      []string{"5eb87cdeffd86e000604b330"},
-			Serial:        "C101",
-			Status:        "retired",
-			Type:          "Dragon 1.0",
-			ID:            "5e9e2c5bf35918ed873b2664",
-		},
-		{
-			ReuseCount:    0,
-			WaterLandings: 1,
-			LandLandings:  0,
-			LastUpdate:    "On display at KSC Visitor's Center ",
-			Launches:      []string{"5eb87cdfffd86e000604b331"},
-			Serial:        "C102",
-			Status:        "retired",
-			Type:          "Dragon 1.0",
-			ID:            "5e9e2c5bf3591882af3b2665",
-		},
-	}
-
-	if err := json.NewEncoder(w).Encode(&data); err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		return
-	}
-}
-
-func fakeGetCapsuleByID(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		w.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	data := v4.Capsule{
-		ReuseCount:    0,
-		WaterLandings: 1,
-		LandLandings:  0,
-		LastUpdate:    "Hanging in atrium at SpaceX HQ in Hawthorne ",
-		Launches:      []string{"5eb87cdeffd86e000604b330"},
-		Serial:        "C101",
-		Status:        "retired",
-		Type:          "Dragon 1.0",
-		ID:            "5e9e2c5bf35918ed873b2664",
-	}
-
-	if err := json.NewEncoder(w).Encode(&data); err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		return
-	}
-}
-
-func fakePostCapsulesQuery(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		w.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	// TODO: implement
-	w.WriteHeader(http.StatusServiceUnavailable)
 }

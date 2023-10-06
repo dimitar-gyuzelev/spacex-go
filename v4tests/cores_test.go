@@ -19,7 +19,7 @@ func TestCoresReal(t *testing.T) {
 }
 
 func TestGetCoresAll(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(fakeGetCores))
+	server := httptest.NewServer(http.HandlerFunc(handler(coresAll)))
 	defer server.Close()
 
 	client := v4clients.NewCoresAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
@@ -39,12 +39,12 @@ func TestGetCoresAll(t *testing.T) {
 }
 
 func TestGetCoreByID(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(fakeGetCoresID))
+	server := httptest.NewServer(http.HandlerFunc(handler(coresOne)))
 	defer server.Close()
 
 	client := v4clients.NewCoresAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
 
-	id := "1234"
+	id := "5e9e289df35918033d3b2623"
 
 	core, err := client.GetCoreByID(id)
 	if err != nil {
@@ -63,7 +63,7 @@ func TestGetCoreByID(t *testing.T) {
 func TestPostCoresQuery(t *testing.T) {
 	t.Skip("PostCoresQuery is not implemented")
 
-	server := httptest.NewServer(http.HandlerFunc(fakePostCoresQuery))
+	server := httptest.NewServer(http.HandlerFunc(handler("")))
 	defer server.Close()
 
 	client := v4clients.NewCoresAPI(fmt.Sprintf("%s/%s", server.URL, "v4"))
@@ -73,16 +73,4 @@ func TestPostCoresQuery(t *testing.T) {
 		t.Error("❌ TestPostCoresQuery:", err)
 		return
 	}
-}
-
-func fakeGetCores(w http.ResponseWriter, r *http.Request) {
-	// TODO: implement
-}
-
-func fakeGetCoresID(w http.ResponseWriter, r *http.Request) {
-	// TODO: implement
-}
-
-func fakePostCoresQuery(w http.ResponseWriter, r *http.Request) {
-	// TODO: implement
 }
