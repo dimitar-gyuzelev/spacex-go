@@ -2,11 +2,12 @@ package v4tests
 
 import (
 	"fmt"
-	v4 "github.com/dimitar-gyuzelev/spacex-go/v4"
-	"github.com/dimitar-gyuzelev/spacex-go/v4clients"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	v4 "github.com/dimitar-gyuzelev/spacex-go/v4"
+	"github.com/dimitar-gyuzelev/spacex-go/v4clients"
 )
 
 func TestCoresReal(t *testing.T) {
