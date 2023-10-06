@@ -11,6 +11,15 @@ import (
 	"github.com/dimitar-gyuzelev/spacex-go/v4clients"
 )
 
+func TestCapuselsReal(t *testing.T) {
+	t.Skip("testing against the real SpaceXAPI")
+	const base = "https://api.spacexdata.com/v4"
+	capsules := v4clients.NewCapsulesAPI(base)
+
+	printMany[v4.Capsule](capsules.GetCapsulesAll)
+	printOne[v4.Capsule](capsules.GetCapsuleByID, "5e9e2c5bf35918ed873b2664")
+}
+
 func TestGetCapsulesAll(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(fakeGetCapsules))
 	defer server.Close()

@@ -7,10 +7,12 @@ import (
 
 type Client struct {
 	v4.CapsulesAPI
+	v4.CoresAPI
 }
 
 func NewClient(baseURL string) Client {
 	return Client{
 		CapsulesAPI: v4clients.NewCapsulesAPI(baseURL),
+		CoresAPI:    v4clients.NewCoresAPI(baseURL),
 	}
 }
