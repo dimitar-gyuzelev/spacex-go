@@ -394,13 +394,136 @@ const (
 )
 
 const (
-	historyAll = ""
+	historyAll = `[
+		{
+			"links": {
+				"article": "http://www.spacex.com/news/2013/02/11/flight-4-launch-update-0"
+			},
+			"title": "Falcon reaches Earth orbit",
+			"event_date_utc": "2008-09-28T23:15:00Z",
+			"event_date_unix": 1222643700,
+			"details": "Falcon 1 becomes the first privately developed liquid-fuel rocket to reach Earth orbit.",
+			"id": "5f6fb2cfdcfdf403df37971e"
+		},
+		{
+			"links": {
+				"article": "http://www.spacex.com/news/2013/02/12/falcon-1-flight-5"
+			},
+			"title": "Falcon delivers payload to orbit",
+			"event_date_utc": "2009-07-13T03:35:00Z",
+			"event_date_unix": 1247456100,
+			"details": "Fifth successful flight of Falcon makes history, becoming the first privately developed liquid-fuel rocket to deliver a commercial satellite to orbit.",
+			"id": "5f6fb2efdcfdf403df37971f"
+		}
+	]`
 
-	historyOne = ""
+	historyOne = `{
+		"links": {
+			"article": "http://www.spacex.com/news/2013/02/12/falcon-1-flight-5"
+		},
+		"title": "Falcon delivers payload to orbit",
+		"event_date_utc": "2009-07-13T03:35:00Z",
+		"event_date_unix": 1247456100,
+		"details": "Fifth successful flight of Falcon makes history, becoming the first privately developed liquid-fuel rocket to deliver a commercial satellite to orbit.",
+		"id": "5f6fb2efdcfdf403df37971f"
+	}`
 )
 
 const (
-	landpadsAll = ""
+	landpadsAll = `[
+		{
+			"images": {
+				"large": [
+					"https://i.imgur.com/KHBk6jO.png"
+				]
+			},
+			"name": "LZ-1",
+			"full_name": "Landing Zone 1",
+			"status": "active",
+			"type": "RTLS",
+			"locality": "Cape Canaveral",
+			"region": "Florida",
+			"latitude": 28.485833,
+			"longitude": -80.544444,
+			"landing_attempts": 21,
+			"landing_successes": 20,
+			"wikipedia": "https://en.wikipedia.org/wiki/Landing_Zones_1_and_2",
+			"details": "SpaceX's first east coast landing pad is Landing Zone 1, where the historic first Falcon 9 landing occurred in December 2015. LC-13 was originally used as a launch pad for early Atlas missiles and rockets from Lockheed Martin. LC-1 was later expanded to include Landing Zone 2 for side booster RTLS Falcon Heavy missions, and it was first used in February 2018 for that purpose.",
+			"launches": [
+				"5eb87cefffd86e000604b342",
+				"5eb87cf9ffd86e000604b349",
+				"5eb87cfeffd86e000604b34d",
+				"5eb87d01ffd86e000604b350",
+				"5eb87d03ffd86e000604b352",
+				"5eb87d07ffd86e000604b356",
+				"5eb87d09ffd86e000604b358",
+				"5eb87d0effd86e000604b35c",
+				"5eb87d10ffd86e000604b35e",
+				"5eb87d13ffd86e000604b360",
+				"5eb87d26ffd86e000604b371",
+				"5eb87d2dffd86e000604b376",
+				"5eb87d35ffd86e000604b37a",
+				"5eb87d36ffd86e000604b37b",
+				"5eb87d42ffd86e000604b384",
+				"5eb87d47ffd86e000604b38a",
+				"5f8399fb818d8b59f5740d43",
+				"600f9b6d8f798e2a4d5f979f",
+				"61bf3e31cd5ab50b0d936345",
+				"6161d32d6db1a92bfba85359",
+				"6243ae24af52800c6e919258"
+			],
+			"id": "5e9e3032383ecb267a34e7c7"
+		},
+		{
+			"images": {
+				"large": [
+					"https://i.imgur.com/YE8PMYX.png"
+				]
+			},
+			"name": "LZ-2",
+			"full_name": "Landing Zone 2",
+			"status": "active",
+			"type": "RTLS",
+			"locality": "Cape Canaveral",
+			"region": "Florida",
+			"latitude": 28.485833,
+			"longitude": -80.544444,
+			"landing_attempts": 3,
+			"landing_successes": 3,
+			"wikipedia": "https://en.wikipedia.org/wiki/Landing_Zones_1_and_2",
+			"details": "SpaceX's first east coast landing pad is Landing Zone 1, where the historic first Falcon 9 landing occurred in December 2015. LC-13 was originally used as a launch pad for early Atlas missiles and rockets from Lockheed Martin. LC-1 was later expanded to include Landing Zone 2 for side booster RTLS Falcon Heavy missions, and it was first used in February 2018 for that purpose.",
+			"launches": [
+				"5eb87d13ffd86e000604b360",
+				"5eb87d2dffd86e000604b376",
+				"5eb87d35ffd86e000604b37a"
+			],
+			"id": "5e9e3032383ecb90a834e7c8"
+		}
+	]`
 
-	landpadsOne = ""
+	landpadsOne = `{
+		"images": {
+			"large": [
+				"https://i.imgur.com/YE8PMYX.png"
+			]
+		},
+		"name": "LZ-2",
+		"full_name": "Landing Zone 2",
+		"status": "active",
+		"type": "RTLS",
+		"locality": "Cape Canaveral",
+		"region": "Florida",
+		"latitude": 28.485833,
+		"longitude": -80.544444,
+		"landing_attempts": 3,
+		"landing_successes": 3,
+		"wikipedia": "https://en.wikipedia.org/wiki/Landing_Zones_1_and_2",
+		"details": "SpaceX's first east coast landing pad is Landing Zone 1, where the historic first Falcon 9 landing occurred in December 2015. LC-13 was originally used as a launch pad for early Atlas missiles and rockets from Lockheed Martin. LC-1 was later expanded to include Landing Zone 2 for side booster RTLS Falcon Heavy missions, and it was first used in February 2018 for that purpose.",
+		"launches": [
+			"5eb87d13ffd86e000604b360",
+			"5eb87d2dffd86e000604b376",
+			"5eb87d35ffd86e000604b37a"
+		],
+		"id": "5e9e3032383ecb90a834e7c8"
+	}`
 )
