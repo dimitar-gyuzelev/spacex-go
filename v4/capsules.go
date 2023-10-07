@@ -16,15 +16,15 @@ type CapsulesAPI interface {
 // Docs: https://github.com/r-spacex/SpaceX-API/blob/master/docs/capsules/v4/schema.md#capsule-schema
 type Capsule struct {
 	ID            string   `json:"id"`
-	ReuseCount    int      `json:"reuse_count,omitempty"`
-	WaterLandings int      `json:"water_landings,omitempty"`
-	LandLandings  int      `json:"land_landings,omitempty"`
 	LastUpdate    string   `json:"last_update,omitempty"`
-	Launches      []string `json:"launches,omitempty"`
 	Serial        string   `json:"serial"`
 	Status        string   `json:"status"`
 	Type          string   `json:"type"`
 	Dragon        string   `json:"dragon,omitempty"`
+	Launches      []string `json:"launches,omitempty"`
+	ReuseCount    int      `json:"reuse_count,omitempty"`
+	WaterLandings int      `json:"water_landings,omitempty"`
+	LandLandings  int      `json:"land_landings,omitempty"`
 }
 
 func (c Capsule) String() string {
