@@ -527,3 +527,37 @@ const (
 		"id": "5e9e3032383ecb90a834e7c8"
 	}`
 )
+
+// Launches dummy data
+const (
+	launchesAll = ""
+
+	launchesUpcoming = ""
+
+	launchesLatest = ""
+
+	launchesPast = ""
+
+	launchesOne = ""
+
+	launchesNext = ""
+)
+
+// Launchpads dummy data
+const (
+	launchpadsAll = ""
+
+	launchpadsOne = ""
+)
+
+// Payloads dummy data
+const (
+	payloadsAll = ""
+
+	payloadsOne = ""
+)
+
+// Roadster dummy data
+const (
+	roadsterOne = ""
+)

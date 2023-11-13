@@ -40,3 +40,8 @@ type Distance struct {
 	Meters float32 `json:"meters"`
 	Feet   float32 `json:"feet"`
 }
+
+type ForceUnits struct {
+	KN  float32 `json:"kN"`
+	LBF float32 `json:"lbf"`
+}
